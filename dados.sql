@@ -38,10 +38,10 @@ INSERT INTO cidade (pais, estado, nome) VALUES
 
 
 
-
 -- Insercao de dados na tabela UNIVERSIDADE
 INSERT INTO universidade VALUES 
 	('Universidade Brown', 'brown.academy@brown.edu', 'https://www.brown.edu/', '+1 401-863-1000', 'Waterman St. - 02912', 1),
+    ('Universidade West Side', 'westside.academy@brown.edu', 'https://www.westside.edu/', '+1 551-753-1764', '41st Avenue. - 03312', 1),
 	('Universidade Complutense de Madrid', 'infocom@ucm.es', 'https://www.ucm.es/', '91-452-0400', 'Avda. de Séneca, 2, Ciudad Universitaria, 28040', 2),
 	('Max Planck Institute For Astrophysics', 'pr@mpa-garching.mpg.de', 'https://www.mpa-garching.mpg.de/', '089 30000-3980', 'Karl-Schwarzschild-Str. 1. Postfach 1317. D-85741', 3);
 
@@ -54,6 +54,7 @@ INSERT INTO universidade VALUES
 INSERT INTO empresa VALUES 
 	('SAP', 'Edificio Tierra Firme. Carrera 9na # 115-06, piso 24, oficina 2404.', 3, 'support@sap.com', 'https://www.sap.com/latinamerica/index.html', '+57/1/600-3000'),
 	('System76', '4240 Carson St. - Suite 101 - 80239', 5, 'office@system76.com', 'https://system76.com/', '(720) 226-9269'),
+    ('ZerOne', '4330 Tobby St. - 80239', 5, 'customer@zerone.com', 'https://zerone.com/', '(720) 262-3239'),
 	('Microsoft', 'One Microsoft Way, 98052', 6, 'office@microsoft.com', 'https://www.microsoft.com/', '+1 425-882-8080');
             
             
@@ -64,10 +65,21 @@ INSERT INTO empresa VALUES
 -- Insercao de dados: ORIENTADOR
 INSERT INTO orientador VALUES 
 	('10335', 'Jacob Karl Rosenstein', 'jacobkarlr@brown.edu'),
+    ('2265', 'Leroi Jansen', 'leroijansen@brown.edu'),
 	('9985', 'Tomás Caraballo', 'tomás@ucm.es'),
 	('159753', 'Hannelore Haemmerle ', 'hannelore@mpa-garching.mpg.de');
     
-    
+
+
+
+
+-- Insercao de dados: PESQUISA
+INSERT INTO pesquisa VALUES 
+	('Pesquisa em armazenamento secundário na UCM.', 'Universidade Complutense de Madrid', '9985', 'Impact of SSD in DBMS'),
+	('Pesquisa em computação', 'Universidade Complutense de Madrid', '2265', 'Algorithms and Data Structures'),
+	('Pesquisa em ML na Universidade Brown', 'Universidade Brown', '10335', 'Convolutional Neural Networks'),
+	('Pesquisa em física', 'Max Planck Institute For Astrophysics', '159753', 'Fluídos');
+
 
 
 
@@ -88,7 +100,8 @@ INSERT INTO supervisor VALUES
 	('S-1057', 'James Hernadéz', 'jhernandez@sap.com'),
 	('221', 'Mário Abelardo', 'marioabelardo@sap.com'),
 	('ENG-5033', 'John Cranston', 'cranston@microsoft.com'),
-	('668-DEV', 'Hitori Hawata', 'hawata@system76.com');
+	('668-DEV', 'Hitori Hawata', 'hawata@system76.com'),
+    ('LEC-1033', 'Jordi Hanson', 'jhanson@microsoft.com');
     
     
     
@@ -99,23 +112,8 @@ INSERT INTO estagio VALUES
 	('Estagio em desenvolvimento de sistemas', 'Microsoft', 'ENG-5033', 1000.00),
 	('Estagio em Engenharia de Software', 'System76', '668-DEV', 985.00),
 	('Estagio em desenvolvimento de hardware', 'System76', '668-DEV', 2000.00),
-	('Estagio professor de computação', 'Microsoft', 'S-1057', 5300.00),
+	('Estagio professor de computação', 'Microsoft', 'LEC-1033', 5300.00),
 	('Estagio professor de língua portuguesa', 'SAP', '221', 1500.00);
-
-
-
-
-
-
-
--- Insercao de dados: PESQUISA
-INSERT INTO pesquisa VALUES 
-	('Pesquisa em armazenamento secundário na UCM.', 'Universidade Complutense de Madrid', '9985', 'Impact of SSD in DBMS'),
-	('Pesquisa em computação', 'Universidade Complutense de Madrid', '9985', 'Algorithms and Data Structures'),
-	('Pesquisa em ML na Universidade Brown', 'Universidade Brown', '10335', 'Convolutional Neural Networks');
-	('Pesquisa em física', 'Max Planck Institute For Astrophysics', '159753', 'Fluídos');
-            
-            
             
             
             
@@ -129,9 +127,10 @@ INSERT INTO intercambista VALUES
             
             
 
+
 -- Insercao de dados: MORADIA
 INSERT INTO moradia VALUES 
-	('51st Avenue, 422', 'Denver', 'Estados Unidos', 230, 4);
+	('51st Avenue, 422', 'Denver', 'Estados Unidos', 230, 4),
 	('Cushing St., 530', 'Providence', 'Estados Unidos', 199, 2);
 
 
@@ -151,7 +150,7 @@ INSERT INTO programacao_intercambio (nome, intercambista, cidade, custo, data_in
 
 -- Insercao de dados: PROGRAMACAO ATIVIDADE
 INSERT INTO programacao_atividade VALUES 
-	(1, 'Estagio em desenvolvimento de sistemas');
+	(1, 'Estagio em desenvolvimento de sistemas'),
 	(2, 'Pesquisa em ML na Universidade Brown');
             
             
@@ -159,5 +158,5 @@ INSERT INTO programacao_atividade VALUES
 
 -- Insercao de dados: MORADIA PROGRAMA
 INSERT INTO moradia_programa VALUES 
-	('Cushing St., 530', 'Providence', 'Estados Unidos', 2);
+	('Cushing St., 530', 'Providence', 'Estados Unidos', 2),
 	('51st Avenue, 422', 'Denver', 'Estados Unidos', 1);
