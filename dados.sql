@@ -89,7 +89,7 @@ INSERT INTO formacao VALUES
 	('10335', 'Phd IA'),
 	('10335', 'Spec. DL'),
 	('9985', 'Phd'),
-	('159753', 'Post Doctor'),
+	('159753', 'Post Doctor');
 
 
 
