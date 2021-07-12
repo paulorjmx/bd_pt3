@@ -2,8 +2,9 @@ import psycopg2
 
 class QueryRunner:
 	def __init__(self):
-		self.DB_NAME = "turismo_intercambio"
-		self.DB_USER = "paulo"
+		#	Always set this to your own DB
+		self.DB_NAME = "postgres"
+		self.DB_USER = "postgres"
 		self.DB_PASSWORD = "gruposete"
 		self.HOST = "localhost"
 		self.PORT = "5432"
@@ -21,20 +22,33 @@ class QueryRunner:
 	def closeCursor(self, cursor):
 		cursor.close()
 	
-	def run(self, query):
+	# Used for selects
+	def fetch(self, query):
 		connection = self.startConnection()
 		cursor = self.createCursor(connection)
 		result = ""
-		#tá dando erro, vou descobrir ainda o que é
 		try:
 			cursor.execute(query)
 			result = cursor.fetchall()
-		except:
+		except Exception as e:
 			print("Erro rodando a query: '" + query + "'!")
+			print(e)
 		finally:
-			self.closeCursor(cursor)
-			self.closeConnection(connection)
-
-		self.closeCursor(cursor)
-		self.closeConnection(connection)
+			if connection:
+				self.closeCursor(cursor)
+				self.closeConnection(connection)
 		return result
+	
+	# Used for inserts, updates and deletes
+	def run(self, query):
+		connection = self.startConnection()
+		cursor = self.createCursor(connection)
+		try:
+			cursor.execute(query)
+		except Exception as e:
+			print("Erro rodando a query: '" + query + "'!")
+			print(e)
+		finally:
+			if connection:
+				self.closeCursor(cursor)
+				self.closeConnection(connection)
