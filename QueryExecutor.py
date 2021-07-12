@@ -1,6 +1,6 @@
 import psycopg2
 
-class QueryRunner:
+class QueryExecutor:
 	def __init__(self):
 		#	Always set this to your own DB
 		self.DB_NAME = "postgres"
@@ -23,12 +23,12 @@ class QueryRunner:
 		cursor.close()
 	
 	# Used for selects
-	def fetch(self, query):
+	def fetch(self, query, data):
 		connection = self.startConnection()
 		cursor = self.createCursor(connection)
 		result = ""
 		try:
-			cursor.execute(query)
+			cursor.execute(query, data)
 			result = cursor.fetchall()
 		except Exception as e:
 			print("Erro rodando a query: '" + query + "'!")
@@ -40,14 +40,16 @@ class QueryRunner:
 		return result
 	
 	# Used for inserts, updates and deletes
-	def run(self, query):
+	def run(self, query, data):
 		connection = self.startConnection()
 		cursor = self.createCursor(connection)
 		try:
-			cursor.execute(query)
+			cursor.execute(query, data)
+			connection.commit()
 		except Exception as e:
 			print("Erro rodando a query: '" + query + "'!")
 			print(e)
+			raise
 		finally:
 			if connection:
 				self.closeCursor(cursor)
