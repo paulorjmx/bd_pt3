@@ -5,7 +5,7 @@
 CREATE DATABASE turismo_intercambio;
 
 -- Cria a tabela de ATIVIDADES
-CREATE TABLE Atividade(
+CREATE TABLE atividade(
   nome VARCHAR(50),
   descricao VARCHAR(80),
   tipo VARCHAR(8),
@@ -19,7 +19,7 @@ CREATE TABLE Atividade(
 
 
 -- Cria a tabela de ORIENTADOR
-CREATE TABLE Orientador(
+CREATE TABLE orientador(
   RA VARCHAR(15),
   nome VARCHAR(50) NOT NULL,
   email VARCHAR(75) NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE Orientador(
 
 
 -- Cria a tabela FORMACAO
-CREATE TABLE Formacao(
+CREATE TABLE formacao(
   orientador VARCHAR(15),
   formacao VARCHAR(13),
   CONSTRAINT FK_ORIENTADOR FOREIGN KEY (orientador) REFERENCES orientador(RA) ON DELETE CASCADE,
@@ -37,7 +37,7 @@ CREATE TABLE Formacao(
 
 
 -- Cria a tabela de PAIS
-CREATE TABLE Pais(
+CREATE TABLE pais(
   nome VARCHAR(45),
   continente VARCHAR(16),
   PRIMARY KEY(nome),
@@ -53,7 +53,7 @@ CREATE TABLE Pais(
 
 
 -- Cria a tabela de CIDADE
-CREATE TABLE Cidade(
+CREATE TABLE cidade(
   id_cidade SERIAL,
   pais VARCHAR(45) NOT NULL,
   estado VARCHAR(60) NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE Cidade(
 
 
 -- Cria a tabela de INTERCAMBISTA
-CREATE TABLE Intercambista(
+CREATE TABLE intercambista(
   cpf VARCHAR(14),
   passaporte VARCHAR(15),
   nome VARCHAR(50) NOT NULL,
@@ -79,7 +79,7 @@ CREATE TABLE Intercambista(
 
 
 -- Cria a tabela de MORADIA
-CREATE TABLE Moradia(
+CREATE TABLE moradia(
   logradouro VARCHAR(100),
   cidade VARCHAR(50),
   pais VARCHAR(40),
@@ -90,7 +90,7 @@ CREATE TABLE Moradia(
 
 
 -- Cria a tabela EMPRESA
-CREATE TABLE Empresa(
+CREATE TABLE empresa(
   nome VARCHAR(60),
   logradouro VARCHAR(100),
   cidade SERIAL,
@@ -103,7 +103,7 @@ CREATE TABLE Empresa(
 
 
 -- Cria a tabela SUPERVISOR
-CREATE TABLE Supervisor(
+CREATE TABLE supervisor(
   cod_ident VARCHAR(10),
   nome VARCHAR(60) NOT NULL,
   email VARCHAR(75) NOT NULL,
@@ -112,7 +112,7 @@ CREATE TABLE Supervisor(
 
 
 -- Cria a tabela ESTAGIO
-CREATE TABLE Estagio(
+CREATE TABLE estagio(
   atividade VARCHAR(50),
   empresa VARCHAR(60),
   supervisor VARCHAR(10),
@@ -124,7 +124,7 @@ CREATE TABLE Estagio(
 );
 
 -- Cria a tabela UNIVERSIDADE
-CREATE TABLE Universidade(
+CREATE TABLE universidade(
   nome VARCHAR(60),
   email VARCHAR(75),
   site VARCHAR(65),
@@ -137,7 +137,7 @@ CREATE TABLE Universidade(
 
 
 -- Cria a tabela PESQUISA
-CREATE TABLE Pesquisa(
+CREATE TABLE pesquisa(
   atividade VARCHAR(50),
   universidade VARCHAR(60),
   orientador VARCHAR(15),
@@ -149,7 +149,7 @@ CREATE TABLE Pesquisa(
 );
   
 -- Cria a tabela PROGRAMACAO DE INTERCAMBIO
-CREATE TABLE Programacao_Intercambio(
+CREATE TABLE programacao_intercambio(
   id_programacao SERIAL,
   nome VARCHAR(40) NOT NULL,
   intercambista VARCHAR(14),
@@ -167,7 +167,7 @@ CREATE TABLE Programacao_Intercambio(
 
 
 -- Cria tabela PROGRAMACAO ATIVIDADE
-CREATE TABLE Programacao_Atividade(
+CREATE TABLE programacao_atividade(
   programacao SERIAL,
   atividade VARCHAR(50),
   CONSTRAINT FK_PROGRATIVIDADE_PROGRAMACAOINTER FOREIGN KEY (programacao) 
@@ -178,7 +178,7 @@ CREATE TABLE Programacao_Atividade(
   
 
 -- Cria de tabela MORADIA PROGRAMA
-CREATE TABLE Moradia_Programa(
+CREATE TABLE moradia_programa(
   logradouro VARCHAR(100),
   cidade VARCHAR(50),
   pais VARCHAR(40),
@@ -192,7 +192,7 @@ CREATE TABLE Moradia_Programa(
 
 
 -- Cria a tabela COMENTARIOS
-CREATE TABLE Comentarios(
+CREATE TABLE comentarios(
   intercambista VARCHAR(14),
   horario TIME,
   data DATE,
