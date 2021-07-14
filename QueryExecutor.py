@@ -51,6 +51,5 @@ class QueryExecutor:
 			print(e)
 			raise
 		finally:
-			if connection:
 				self.closeCursor(cursor)
 				self.closeConnection(connection)
