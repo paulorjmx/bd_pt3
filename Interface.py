@@ -19,3 +19,11 @@ class Interface:
 		operation = input("Digite o que vai inserir, opções: 'ATIVIDADE': ")
 		if operation == 'ATIVIDADE':
 			Controller().Insert().insertAtividade()
+
+	def searchSwitch(self):
+		pass
+	def updateSwitch(self):
+		pass
+	def deleteSwitch(self):
+		pass
+	
