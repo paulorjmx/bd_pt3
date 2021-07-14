@@ -31,6 +31,8 @@ class QueryExecutor:
 		connection = self.startConnection()
 		cursor = self.createCursor(connection)
 		result = ""
+		print(cursor.mogrify(query, data))
+		
 		try:
 			cursor.execute(query, data)
 			result = cursor.fetchall()
@@ -46,6 +48,8 @@ class QueryExecutor:
 	def run(self, query, data):
 		connection = self.startConnection()
 		cursor = self.createCursor(connection)
+		print(cursor.mogrify(query, data))
+		
 		try:
 			cursor.execute(query, data)
 			connection.commit()

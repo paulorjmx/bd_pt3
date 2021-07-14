@@ -36,9 +36,21 @@ class Atividade:
 			data = (nome, descricao, tipo, data_inicio, data_fim, qtde_participantes)
 			executor.run(query, data)
 		except InputError as e:
-			print(e.message)
 			raise
 		except Exception as e:
-			print("Erro rodando a query: '" + query + "'!")
-			print(e)
+			raise
+
+	def update(self, nomeAtividade, data):
+		def createTemplate(x): 
+			return x + " = %s"
+		executor = QueryExecutor()
+		try:
+			template = "UPDATE atividade SET {data} WHERE nome={nome}"
+			query = template.format(data=', '.join(map(createTemplate, data.keys())), nome='%s')
+			data['nome'] = nomeAtividade
+			data = tuple(data.values())
+			executor.run(query, data)
+		except InputError as e:
+			raise
+		except Exception as e:
 			raise
