@@ -2,12 +2,16 @@ from QueryExecutor import QueryExecutor
 import re
 from Error import InputError
 
+# Classe de operações na tabela de Atividade.
 class Atividade:
+	
+	# Valida se as datas estão no formato correto.
 	def validateDate(self, date):
 		regex = re.compile('[0-3][0-9]\/[0-1][0-9]\/[0-9]{4}')
 		match = regex.match(date)
 		return bool(match)
 	
+	# Valida todos os inputs para a inserção.
 	def validate(self, nome, descricao, tipo, data_inicio, data_fim, qtde_participantes):
 		if len(nome) < 1 or len(nome) > 50:
 			raise InputError('nome')
@@ -22,9 +26,10 @@ class Atividade:
 		if not qtde_participantes.strip().isdigit():
 			raise InputError('qtde de participantes')
 	
+	#	Insere uma atividade.
 	def insert(self, nome, descricao, tipo, data_inicio, data_fim, qtde_participantes):
 		executor = QueryExecutor()
-		
+
 		try:
 			self.validate(nome, descricao, tipo, data_inicio, data_fim, qtde_participantes)
 			query = "INSERT INTO atividade (nome, descricao, tipo, data_inicio, data_fim, qtde_participantes) VALUES (%s, %s, %s, %s, %s, %s);"
