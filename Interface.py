@@ -36,14 +36,14 @@ class ListWidget:
 
 	def __init__(self, items = ["default"]):
 		self.items = items
-		self.items.sort(reverse=True, key=len)
 
 	def size(self):
 		return len(self.items)
 
 	def show(self):
 		i = 1
-		bigger = len(self.items[0])
+		tmp_sort = sorted(self.items, key=len, reverse=True)
+		bigger = len(tmp_sort[0])
 
 		for item in self.items:
 			display = "[" +str(i)+ "] " +item+ (" " * (bigger - len(item)))
