@@ -8,7 +8,9 @@ INSERT INTO atividade VALUES
 	('Pesquisa em ML na Universidade Brown', 'Pesquisar sobre novas técnicas em aprendizado profundo (Depp Learning).', 'PESQUISA', '02/02/2021', '17/09/2024', 1),
 	('Pesquisa em armazenamento secundário na UCM.', 'Pesquisar sobre novas técnicas para armazenamento secundário.', 'PESQUISA', '21/10/2025', '01/04/2029', 1),
  	('Pesquisa em física', 'Pesquisa na área de fluídos', 'PESQUISA', '22/11/2025', '18/04/2029', 1),
- 	('Pesquisa em computação', 'Pesquisa na área de algoritmos', 'PESQUISA', '22/04/2025', '18/04/2029', 1);
+ 	('Pesquisa em computação', 'Pesquisa na área de algoritmos', 'PESQUISA', '22/04/2025', '18/04/2029', 1),
+	('Pesquisa em Machine Learning na Universidade Complutense de Madrid ', 'Pesquisa na área de ML', 'PESQUISA', '22/04/2020', '18/04/2025', 1);
+
 
 
 
@@ -19,8 +21,8 @@ INSERT INTO pais VALUES
 	('Estados Unidos', 'AMERICA DO NORTE'),
 	('Espanha', 'EUROPA'),
 	('Colômbia', 'AMERICA DO SUL'),
-	('Alemanha', 'EUROPA');
-
+	('Alemanha', 'EUROPA'),
+	('Brasil', 'AMERICA DO SUL');
 
 
 
@@ -31,7 +33,8 @@ INSERT INTO cidade (pais, estado, nome) VALUES
 	('Colômbia', 'Bogotá', 'Bogotá'),
 	('Alemanha', 'Baviera', 'Munique'),
 	('Estados Unidos', 'Colorado', 'Denver'),
-	('Estados Unidos', 'Washington', 'Redmond');
+	('Estados Unidos', 'Washington', 'Redmond'),
+	('Brasil', 'Sao Paulo', 'Sao Paulo');
 
 
 
@@ -43,7 +46,8 @@ INSERT INTO universidade VALUES
 	('Universidade Brown', 'brown.academy@brown.edu', 'https://www.brown.edu/', '+1 401-863-1000', 'Waterman St. - 02912', 1),
     ('Universidade West Side', 'westside.academy@brown.edu', 'https://www.westside.edu/', '+1 551-753-1764', '41st Avenue. - 03312', 1),
 	('Universidade Complutense de Madrid', 'infocom@ucm.es', 'https://www.ucm.es/', '91-452-0400', 'Avda. de Séneca, 2, Ciudad Universitaria, 28040', 2),
-	('Max Planck Institute For Astrophysics', 'pr@mpa-garching.mpg.de', 'https://www.mpa-garching.mpg.de/', '089 30000-3980', 'Karl-Schwarzschild-Str. 1. Postfach 1317. D-85741', 3);
+	('Max Planck Institute For Astrophysics', 'pr@mpa-garching.mpg.de', 'https://www.mpa-garching.mpg.de/', '089 30000-3980', 'Karl-Schwarzschild-Str. 1. Postfach 1317. D-85741', 3),
+	('Universidade Autónoma de Madrid', 'cau@uam.es', 'https://www.uam.es/uam/inicio', '+34 914 97 50 00', ' Ciudad Universitaria de Cantoblanco, 28049', 2);
 
 
 
@@ -79,7 +83,7 @@ INSERT INTO pesquisa VALUES
 	('Pesquisa em computação', 'Universidade Complutense de Madrid', '2265', 'Algorithms and Data Structures'),
 	('Pesquisa em ML na Universidade Brown', 'Universidade Brown', '10335', 'Convolutional Neural Networks'),
 	('Pesquisa em física', 'Max Planck Institute For Astrophysics', '159753', 'Fluídos');
-
+	('Pesquisa em Machine Learning na Universidade Complutense de Madrid ', '9985', 'Machine Learning');
 
 
 
@@ -142,7 +146,9 @@ INSERT INTO moradia VALUES
 INSERT INTO programacao_intercambio (nome, intercambista, cidade, custo, data_inicio, data_fim, descricao)
 	VALUES 
     	('Estágio de verão', '773.119.540-61', 5, 2560.39, '20/11/2019', '28/11/2020', 'Experiência em desenvolvimento de sistemas Linux'),
-		('Pesquisa sobre ML', '369.287.380-81', 1, 42399.61, '28/01/2021', '01/10/2024', 'Adquirir conhecimento em redes neurais convolucionais.');
+		('Pesquisa de Doutorado', '773.119.540-61', 1, 4500.36, '20/11/2021', '20/11/2024', 'Pesquisa de doutorado sobre Redes neurais'),
+		('Pesquisa sobre ML', '369.287.380-81', 1, 42399.61, '28/01/2021', '01/10/2024', 'Adquirir conhecimeto em redes neurais convolucionais.'),
+        ('Estágio Remunerado', '369.287.380-81', 5, 500.61, '28/01/2018', '01/10/2019', 'Estágio remunerada em empresa no exterior');
             
             
             
