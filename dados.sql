@@ -5,13 +5,14 @@ INSERT INTO atividade VALUES
 	('Estagio professor de computação', 'Lecionar aulas de algoritmos, estrutura de dados e banco de dados', 'ESTAGIO', '05/06/2020', '05/05/2021', 1),
  	('Estagio em Engenharia de Software', 'Gerenciar uma equipe de desenvolvimento', 'ESTAGIO', '15/07/2020', '10/07/2021', 1),
  	('Estagio em desenvolvimento de sistemas', 'Apoiar o desenvolvimento dos sistemas', 'ESTAGIO', '23/11/2019', '23/11/2020', 1),
+	('Estagio em redes neurais para saude', 'Redes neurais em saúde', 'ESTAGIO', '25/11/2020', '28/11/2021', 1),
+	('Estagio professor de Fisica', 'Lecionar aulas de física', 'ESTAGIO', '07/05/2020', '01/05/2021', 1),
+	('Estagio de verão em quimica', 'Lecionar aulas de quimica', 'ESTAGIO', '27/10/2005', '05/12/2006', 1),
 	('Pesquisa em ML na Universidade Brown', 'Pesquisar sobre novas técnicas em aprendizado profundo (Depp Learning).', 'PESQUISA', '02/02/2021', '17/09/2024', 1),
 	('Pesquisa em armazenamento secundário na UCM.', 'Pesquisar sobre novas técnicas para armazenamento secundário.', 'PESQUISA', '21/10/2025', '01/04/2029', 1),
  	('Pesquisa em física', 'Pesquisa na área de fluídos', 'PESQUISA', '22/11/2025', '18/04/2029', 1),
  	('Pesquisa em computação', 'Pesquisa na área de algoritmos', 'PESQUISA', '22/04/2025', '18/04/2029', 1),
-	('Pesquisa em Machine Learning na Universidade Complutense de Madrid ', 'Pesquisa na área de ML', 'PESQUISA', '22/04/2020', '18/04/2025', 1);
-
-
+	('Pesquisa em Machine Learning em Madrid', 'Pesquisa na área de ML', 'PESQUISA', '22/04/2020', '18/04/2025', 1);
 
 
 
@@ -46,7 +47,7 @@ INSERT INTO universidade VALUES
 	('Universidade Brown', 'brown.academy@brown.edu', 'https://www.brown.edu/', '+1 401-863-1000', 'Waterman St. - 02912', 1),
     ('Universidade West Side', 'westside.academy@brown.edu', 'https://www.westside.edu/', '+1 551-753-1764', '41st Avenue. - 03312', 1),
 	('Universidade Complutense de Madrid', 'infocom@ucm.es', 'https://www.ucm.es/', '91-452-0400', 'Avda. de Séneca, 2, Ciudad Universitaria, 28040', 2),
-	('Max Planck Institute For Astrophysics', 'pr@mpa-garching.mpg.de', 'https://www.mpa-garching.mpg.de/', '089 30000-3980', 'Karl-Schwarzschild-Str. 1. Postfach 1317. D-85741', 3),
+	('Max Planck Institute For Astrophysics', 'pr@mpa-garching.mpg.de', 'https://www.mpa-garching.mpg.de/', '089 30000-3980', 'Karl-Schwarzschild-Str. 1. Postfach 1317. D-85741', 4),
 	('Universidade Autónoma de Madrid', 'cau@uam.es', 'https://www.uam.es/uam/inicio', '+34 914 97 50 00', ' Ciudad Universitaria de Cantoblanco, 28049', 2);
 
 
@@ -59,8 +60,9 @@ INSERT INTO empresa VALUES
 	('SAP', 'Edificio Tierra Firme. Carrera 9na # 115-06, piso 24, oficina 2404.', 3, 'support@sap.com', 'https://www.sap.com/latinamerica/index.html', '+57/1/600-3000'),
 	('System76', '4240 Carson St. - Suite 101 - 80239', 5, 'office@system76.com', 'https://system76.com/', '(720) 226-9269'),
     ('ZerOne', '4330 Tobby St. - 80239', 5, 'customer@zerone.com', 'https://zerone.com/', '(720) 262-3239'),
-	('Microsoft', 'One Microsoft Way, 98052', 6, 'office@microsoft.com', 'https://www.microsoft.com/', '+1 425-882-8080');
-            
+	('Microsoft', 'One Microsoft Way, 98052', 6, 'office@microsoft.com', 'https://www.microsoft.com/', '+1 425-882-8080'),
+    ('CharterCARE Health Partners', '7102-Bone Marrow', 1, 'office@chartercare.com', 'https://www.chartercare.org/', '+1 456-224-8080'),
+	('Empresa Alemanha', 'Street 123', 4, 'generic@enterprise.com', 'https://enterprise.com/', '+11 943547788');        
             
             
             
@@ -80,10 +82,10 @@ INSERT INTO orientador VALUES
 -- Insercao de dados: PESQUISA
 INSERT INTO pesquisa VALUES 
 	('Pesquisa em armazenamento secundário na UCM.', 'Universidade Complutense de Madrid', '9985', 'Impact of SSD in DBMS'),
-	('Pesquisa em computação', 'Universidade Complutense de Madrid', '2265', 'Algorithms and Data Structures'),
+	('Pesquisa em computação', 'Max Planck Institute For Astrophysics', '2265', 'Algorithms and Data Structures'),
 	('Pesquisa em ML na Universidade Brown', 'Universidade Brown', '10335', 'Convolutional Neural Networks'),
 	('Pesquisa em física', 'Max Planck Institute For Astrophysics', '159753', 'Fluídos');
-	('Pesquisa em Machine Learning na Universidade Complutense de Madrid ', '9985', 'Machine Learning');
+	('Pesquisa em Machine Learning em Madrid', 'Universidade Complutense de Madrid', '9985', 'Machine Learning');
 
 
 
@@ -105,7 +107,9 @@ INSERT INTO supervisor VALUES
 	('221', 'Mário Abelardo', 'marioabelardo@sap.com'),
 	('ENG-5033', 'John Cranston', 'cranston@microsoft.com'),
 	('668-DEV', 'Hitori Hawata', 'hawata@system76.com'),
-    ('LEC-1033', 'Jordi Hanson', 'jhanson@microsoft.com');
+    ('LEC-1033', 'Jordi Hanson', 'jhanson@microsoft.com'),
+	('551', 'Mark Jordan', 'markjordan@chartercare.com'),
+	('547', 'Vincent John', 'vincent@generic.com');
     
     
     
@@ -117,7 +121,9 @@ INSERT INTO estagio VALUES
 	('Estagio em Engenharia de Software', 'System76', '668-DEV', 985.00),
 	('Estagio em desenvolvimento de hardware', 'System76', '668-DEV', 2000.00),
 	('Estagio professor de computação', 'Microsoft', 'LEC-1033', 5300.00),
-	('Estagio professor de língua portuguesa', 'SAP', '221', 1500.00);
+	('Estagio professor de língua portuguesa', 'SAP', '221', 1500.00),
+	('Estagio em redes neurais para saude', 'CharterCARE Health Partners', '551', 2000.00),
+	('Estagio de verão em quimica', 'Empresa Alemanha', '547', 800.00);
             
             
             
@@ -126,8 +132,10 @@ INSERT INTO estagio VALUES
 -- Insercao de dados: INTERCAMBISTA
 INSERT INTO intercambista VALUES
 	('369.287.380-81', 'CS-8966', 'José Albuquerque da Silva', 'albuquerque@uol.com.br', 'Jaboticabal', 'Alameda dos Anjos, 1340', 'Brasil'),
-	('773.119.540-61', 'CS-9099', 'Karina Alves Rodrigues', 'kalves@gmail.com', 'Belo Horizonte', 'Avenida Bias Fortes , 860', 'Brasil');
-            
+	('773.119.540-61', 'CS-9099', 'Karina Alves Rodrigues', 'kalves@gmail.com', 'Belo Horizonte', 'Avenida Bias Fortes , 860', 'Brasil'),
+	('123.456.789-70', 'CS-2020', 'Guilherme Tavares', 'gant@gmail.com', 'Belo Horizonte', 'Rua Feliciano Cavia, 103', 'Brasil'),
+	('147.458.174-70', 'CS-2021', 'João Silva', 'joaosilva@hotmail.com', 'Sao Paulo', 'Rua antonio silva. 757', 'Brasil'),
+	('584.478.944-51', 'CS-4785', 'Gabriel Neves', 'gneves@outlook.com', 'Sao Carlos', 'Rua governador 212', 'Brasil');
             
             
 
@@ -145,10 +153,12 @@ INSERT INTO moradia VALUES
 -- Insercao de dados: PROGRAMACAO INTERCAMBIO
 INSERT INTO programacao_intercambio (nome, intercambista, cidade, custo, data_inicio, data_fim, descricao)
 	VALUES 
-    	('Estágio de verão', '773.119.540-61', 5, 2560.39, '20/11/2019', '28/11/2020', 'Experiência em desenvolvimento de sistemas Linux'),
+    	('Estágio de verão', '773.119.540-61', 1, 2560.39, '20/11/2019', '28/11/2020', 'Experiência em desenvolvimento de sistemas Linux'),
 		('Pesquisa de Doutorado', '773.119.540-61', 1, 4500.36, '20/11/2021', '20/11/2024', 'Pesquisa de doutorado sobre Redes neurais'),
-		('Pesquisa sobre ML', '369.287.380-81', 1, 42399.61, '28/01/2021', '01/10/2024', 'Adquirir conhecimeto em redes neurais convolucionais.'),
-        ('Estágio Remunerado', '369.287.380-81', 5, 500.61, '28/01/2018', '01/10/2019', 'Estágio remunerada em empresa no exterior');
+		('Pesquisa sobre Fluidos', '369.287.380-81', 5, 42399.61, '28/01/2021', '01/10/2024', 'Adquirir conhecimeto em mecanica dos fluidos.'),
+        ('Estágio Remunerado', '369.287.380-81', 5, 500.61, '28/01/2018', '01/10/2019', 'Estágio remunerada em empresa no exterior'),
+		('Estágio de Verão - Guilherme', '123.456.789-70', 4, 2600.65, '10/05/2017', '05/07/2018', 'Estagio remunerado'),
+		('Pesquisa em Computacao', '147.458.174-70', 4, 1254.50, '20/11/2020', '20/1/2025', 'Pesquisa em computacao');
             
             
             
@@ -156,8 +166,12 @@ INSERT INTO programacao_intercambio (nome, intercambista, cidade, custo, data_in
 
 -- Insercao de dados: PROGRAMACAO ATIVIDADE
 INSERT INTO programacao_atividade VALUES 
-	(1, 'Estagio em desenvolvimento de sistemas'),
-	(2, 'Pesquisa em ML na Universidade Brown');
+	(1, 'Estagio em redes neurais para saude'),
+	(2, 'Pesquisa em ML na Universidade Brown'),
+	(3, 'Pesquisa em física'),
+	(4, 'Estagio professor de Fisica'),
+	(6, 'Pesquisa em computação'),
+	(5, 'Estagio de verão em quimica');
             
             
             
