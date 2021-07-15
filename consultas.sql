@@ -29,7 +29,18 @@ WHERE E.remuneracao > 0
 GROUP BY EXTRACT(YEAR FROM A.data_inicio), E.remuneracao, A.nome
 ORDER BY ano;
 
+-- Consultar quais intercambistas fizeram comentários sobre pelo menos duas cidades que visitou
+Select I.cpf AS INTERCAMBISTA as CIDADE FROM Comentarios COM
+    JOIN Intercambista I ON COM.intercambista = I.cpf
+    JOIN Cidade CID ON Com.cidade = CID.id_cidade;
 
+-- Consultar quais intercambistas fizeram comentários sobre mais de uma cidade que visitou.
+SELECT I.cpf AS INTER, Count(Com.cidade) N_CID from Comentarios COM
+    join Intercambista I ON COM.intercambista = I.cpf
+    join programacao_intercambio PI ON I.cpf = PI.intercambista
+    join Cidade CID ON PI.cidade = Cid.id_cidade AND COM.cidade = CID.id_cidade
+GROUP BY INTER
+HAVING COUNT(*) > 1;
 
 -- Selecionar os Intercambistas que são os únicos a realizar um programa de intercâmbio numa determinada cidade.    
 SELECT I.cpf FROM Intercambista I

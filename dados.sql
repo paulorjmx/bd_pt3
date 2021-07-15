@@ -12,8 +12,8 @@ INSERT INTO atividade VALUES
 	('Pesquisa em armazenamento secundário na UCM.', 'Pesquisar sobre novas técnicas para armazenamento secundário.', 'PESQUISA', '21/10/2025', '01/04/2029', 1),
  	('Pesquisa em física', 'Pesquisa na área de fluídos', 'PESQUISA', '22/11/2025', '18/04/2029', 1),
  	('Pesquisa em computação', 'Pesquisa na área de algoritmos', 'PESQUISA', '22/04/2025', '18/04/2029', 1),
-	('Pesquisa em Machine Learning em Madrid', 'Pesquisa na área de ML', 'PESQUISA', '22/04/2020', '18/04/2025', 1);
-
+	('Pesquisa em Machine Learning em Madrid', 'Pesquisa na área de ML', 'PESQUISA', '22/04/2020', '18/04/2025', 1),
+	('Pesquisa sobre design em Redmond', 'Pesquisa de design grafico', 'PESQUISA', '20/11/2019', '25/11/2023', 1);
 
 
 
@@ -48,7 +48,8 @@ INSERT INTO universidade VALUES
     ('Universidade West Side', 'westside.academy@brown.edu', 'https://www.westside.edu/', '+1 551-753-1764', '41st Avenue. - 03312', 1),
 	('Universidade Complutense de Madrid', 'infocom@ucm.es', 'https://www.ucm.es/', '91-452-0400', 'Avda. de Séneca, 2, Ciudad Universitaria, 28040', 2),
 	('Max Planck Institute For Astrophysics', 'pr@mpa-garching.mpg.de', 'https://www.mpa-garching.mpg.de/', '089 30000-3980', 'Karl-Schwarzschild-Str. 1. Postfach 1317. D-85741', 4),
-	('Universidade Autónoma de Madrid', 'cau@uam.es', 'https://www.uam.es/uam/inicio', '+34 914 97 50 00', ' Ciudad Universitaria de Cantoblanco, 28049', 2);
+	('Universidade Autónoma de Madrid', 'cau@uam.es', 'https://www.uam.es/uam/inicio', '+34 914 97 50 00', ' Ciudad Universitaria de Cantoblanco, 28049', 2),
+	('Instituto de Tecnologia DigiPen', 'cau@tid.edu', 'https://www.digipen.edu/', '+1 866-478-5236', '9931 Willows Rd, Redmond', 6);
 
 
 
@@ -73,7 +74,8 @@ INSERT INTO orientador VALUES
 	('10335', 'Jacob Karl Rosenstein', 'jacobkarlr@brown.edu'),
     ('2265', 'Leroi Jansen', 'leroijansen@brown.edu'),
 	('9985', 'Tomás Caraballo', 'tomás@ucm.es'),
-	('159753', 'Hannelore Haemmerle ', 'hannelore@mpa-garching.mpg.de');
+	('159753', 'Hannelore Haemmerle ', 'hannelore@mpa-garching.mpg.de'),
+	('202020', 'Andrew White', 'andrew@tide.edu');
     
 
 
@@ -85,8 +87,8 @@ INSERT INTO pesquisa VALUES
 	('Pesquisa em computação', 'Max Planck Institute For Astrophysics', '2265', 'Algorithms and Data Structures'),
 	('Pesquisa em ML na Universidade Brown', 'Universidade Brown', '10335', 'Convolutional Neural Networks'),
 	('Pesquisa em física', 'Max Planck Institute For Astrophysics', '159753', 'Fluídos');
-	('Pesquisa em Machine Learning em Madrid', 'Universidade Complutense de Madrid', '9985', 'Machine Learning');
-
+	('Pesquisa em Machine Learning em Madrid', 'Universidade Complutense de Madrid', '9985', 'Machine Learning'),
+	('Pesquisa sobre design em Redmond', 'Instituto de Tecnologia DigiPen', '')
 
 
 
@@ -158,8 +160,9 @@ INSERT INTO programacao_intercambio (nome, intercambista, cidade, custo, data_in
 		('Pesquisa sobre Fluidos', '369.287.380-81', 5, 42399.61, '28/01/2021', '01/10/2024', 'Adquirir conhecimeto em mecanica dos fluidos.'),
         ('Estágio Remunerado', '369.287.380-81', 5, 500.61, '28/01/2018', '01/10/2019', 'Estágio remunerada em empresa no exterior'),
 		('Estágio de Verão - Guilherme', '123.456.789-70', 4, 2600.65, '10/05/2017', '05/07/2018', 'Estagio remunerado'),
-		('Pesquisa em Computacao', '147.458.174-70', 4, 1254.50, '20/11/2020', '20/1/2025', 'Pesquisa em computacao');
-            
+		('Pesquisa em Computacao', '147.458.174-70', 4, 1254.50, '20/11/2020', '20/1/2025', 'Pesquisa em computacao'),
+        ('Pos grad design', '123.456.789-70', 6, 5000.00, '07/05/2019', '05/10/2023', 'Pesquisa em Design ...'),
+		('Pesquisa de Mestrado', '773.119.540-61', 2, 2550.36, '21/10/2025', '01/04/2029', 'Projeto de Mestrado');
             
             
             
@@ -171,7 +174,8 @@ INSERT INTO programacao_atividade VALUES
 	(3, 'Pesquisa em física'),
 	(4, 'Estagio professor de Fisica'),
 	(6, 'Pesquisa em computação'),
-	(5, 'Estagio de verão em quimica');
+	(5, 'Estagio de verão em quimica'),
+	(7, 'Pesquisa em armazenamento secundário na UCM.');
             
             
             
@@ -180,3 +184,10 @@ INSERT INTO programacao_atividade VALUES
 INSERT INTO moradia_programa VALUES 
 	('Cushing St., 530', 'Providence', 'Estados Unidos', 2),
 	('51st Avenue, 422', 'Denver', 'Estados Unidos', 1);
+
+-- Insercao de dados: Comentarios
+INSERT INTO comentarios VALUES
+	('123.456.789-70', '14:30', '11/05/2017', 'Cidade boa', 4, NULL, NULL),
+	('123.456.789-70', '20:00', '20/01/2020', 'Cidade ruim', 6, NULL, NULL),
+	('773.119.540-61', '14:30', '11/05/2017', 'Ótima cidae', 2, NULL, NULL),
+	('773.119.540-61', '19:10', '11/04/2014', 'Ainda não visitei', 7, NULL, NULL);
