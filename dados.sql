@@ -118,7 +118,7 @@ INSERT INTO supervisor VALUES
 -- Insercao de dados: ESTAGIO
 INSERT INTO estagio VALUES
 	('Estagio em desenvolvimento de sistemas', 'Microsoft', 'ENG-5033', 1000.00),
-	('Estagio em Engenharia de Software', 'System76', '668-DEV', 985.00),
+	('Estagio em Engenharia de Software', 'System76', '668-DEV', 0.00),
 	('Estagio em desenvolvimento de hardware', 'System76', '668-DEV', 2000.00),
 	('Estagio professor de computação', 'Microsoft', 'LEC-1033', 5300.00),
 	('Estagio professor de língua portuguesa', 'SAP', '221', 1500.00),

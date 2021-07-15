@@ -22,6 +22,13 @@ SELECT I.cpf, PI.nome, M.logradouro FROM Intercambista I
     LEFT JOIN Moradia M on MP.logradouro = M.logradouro AND MP.cidade = M.cidade AND MP.pais = M.pais;
 
 -- Lista os estágios iniciados em cada ano.
+SELECT EXTRACT(YEAR FROM A.data_inicio) AS ano, A.nome as Estagio, E.remuneracao
+FROM Estagio E
+    JOIN Atividade A ON E.atividade = A.nome
+WHERE E.remuneracao > 0
+GROUP BY EXTRACT(YEAR FROM A.data_inicio), E.remuneracao, A.nome
+ORDER BY ano;
+
 
 
 -- Selecionar os Intercambistas que são os únicos a realizar um programa de intercâmbio numa determinada cidade.    
