@@ -20,3 +20,13 @@ JOIN Pais P ON P.nome = C.pais;
 SELECT O.nome, COUNT(DISTINCT P.titulo) FROM PESQUISA P
     JOIN Orientador O ON P.orientador = O.RA
     GROUP BY O.nome HAVING COUNT(DISTINCT P.titulo) > 1;
+
+-- Contar intercambistas em programas de tipo pesquisa em cada continente
+SELECT continente, COUNT(*) FROM intercambista I
+    JOIN programacao_intercambio P_I ON I.cpf = P_I.intercambista
+    JOIN cidade C ON P_I.cidade = C.id_cidade
+    JOIN pais P ON C.pais = P.nome
+    JOIN programacao_atividade P_A ON P_A.programacao = P_I.id_programacao
+    JOIN atividade A ON A.nome = P_A.atividade
+    WHERE A.tipo='PESQUISA'
+    GROUP BY P.continente;
