@@ -103,7 +103,7 @@ class Interface:
 		operation = input_insert.show(list_operation)
 
 		if operation == 1:
-			Controller().Insert().insertAtividade()
+			Controller().Insert().atividade()
 		elif operation == 4:
 			pass
 
