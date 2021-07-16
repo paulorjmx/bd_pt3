@@ -98,6 +98,3 @@ class Atividade:
 			raise
 		except Exception as e:
 			raise
-
-a = Atividade()
-a.delete('aaa')
