@@ -53,7 +53,6 @@ INSERT INTO universidade VALUES
 	('Universidade Complutense de Madrid', 'infocom@ucm.es', 'https://www.ucm.es/', '91-452-0400', 'Avda. de Séneca, 2, Ciudad Universitaria, 28040', 2),
 	('Max Planck Institute For Astrophysics', 'pr@mpa-garching.mpg.de', 'https://www.mpa-garching.mpg.de/', '089 30000-3980', 'Karl-Schwarzschild-Str. 1. Postfach 1317. D-85741', 3),
     ('MIT', 'office@mit.edu', 'https://www.mit.edu/', '617-253-1000', '77 Massachusetts Avenue', 6),
-	('Max Planck Institute For Astrophysics', 'pr@mpa-garching.mpg.de', 'https://www.mpa-garching.mpg.de/', '089 30000-3980', 'Karl-Schwarzschild-Str. 1. Postfach 1317. D-85741', 4),
 	('Universidade Autónoma de Madrid', 'cau@uam.es', 'https://www.uam.es/uam/inicio', '+34 914 97 50 00', ' Ciudad Universitaria de Cantoblanco, 28049', 2),
 	('Instituto de Tecnologia DigiPen', 'cau@tid.edu', 'https://www.digipen.edu/', '+1 866-478-5236', '9931 Willows Rd, Redmond', 6);
 
@@ -97,10 +96,7 @@ INSERT INTO pesquisa VALUES
     ('Pesquisa em nanotecnologia', 'MIT', '1907', 'Nanotechnoly in integrated circuits'),
     ('Pesquisa em algoritmos evolutivos', 'MIT', '1907', 'Robotics'),
 	('Pesquisa em Machine Learning em Madrid', 'Universidade Complutense de Madrid', '9985', 'Machine Learning'),
-	('Pesquisa sobre design em Redmond', 'Instituto de Tecnologia DigiPen', ''),
-	('Pesquisa em física', 'Max Planck Institute For Astrophysics', '159753', 'Fluídos'),
-	('Pesquisa em Machine Learning em Madrid', 'Universidade Complutense de Madrid', '9985', 'Machine Learning'),
-	('Pesquisa sobre design em Redmond', 'Instituto de Tecnologia DigiPen', '');
+	('Pesquisa sobre design em Redmond', 'Instituto de Tecnologia DigiPen', '202020', '');
 
 
 
@@ -169,7 +165,7 @@ INSERT INTO programacao_intercambio (nome, intercambista, cidade, custo, data_in
 	VALUES 
     	('Estágio de verão', '773.119.540-61', 5, 2560.39, '20/11/2019', '28/11/2020', 'Experiência em desenvolvimento de sistemas Linux'),
 		('Pesquisa sobre ML', '369.287.380-81', 1, 42399.61, '28/01/2021', '01/10/2024', 'Adquirir conhecimento em redes neurais convolucionais.'),
-    	('Estágio de verão', '773.119.540-61', 1, 2560.39, '20/11/2019', '28/11/2020', 'Experiência em desenvolvimento de sistemas Linux'),
+    	('Estágio de inverno', '773.119.540-61', 1, 3160.99, '24/06/2019', '28/11/2022', 'Experiência em desenvolvimento com node.js'),
 		('Pesquisa de Doutorado', '773.119.540-61', 1, 4500.36, '20/11/2021', '20/11/2024', 'Pesquisa de doutorado sobre Redes neurais'),
 		('Pesquisa sobre Fluidos', '369.287.380-81', 5, 42399.61, '28/01/2021', '01/10/2024', 'Adquirir conhecimeto em mecanica dos fluidos.'),
         ('Estágio Remunerado', '369.287.380-81', 5, 500.61, '28/01/2018', '01/10/2019', 'Estágio remunerada em empresa no exterior'),
@@ -204,5 +200,4 @@ INSERT INTO comentarios VALUES
 	('123.456.789-70', '14:30', '11/05/2017', 'Cidade boa', 4, NULL, NULL),
 	('123.456.789-70', '20:00', '20/01/2020', 'Cidade ruim', 6, NULL, NULL),
 	('773.119.540-61', '14:30', '11/05/2017', 'Ótima cidae', 2, NULL, NULL),
-	('773.119.540-61', '19:10', '11/04/2014', 'Ainda não visitei', 7, NULL, NULL),
 	('773.119.540-61', '19:10', '11/04/2014', 'Ainda não visitei', 7, NULL, NULL);
