@@ -40,31 +40,3 @@ class Controller:
 				A().searchForMany('')
 			else:
 				A().searchForOne(nome)
-		
-		# def insert(self):
-		# 	nome = input("Digite o nome da atividade: ")
-		# 	descricao = input("Digite a descrição: ")
-		# 	tipo = input("Digite o tipo: 'PESQUISA' ou 'ESTAGIO: '")
-		# 	data_inicio = input("Digite a data de inicio no formato dd/mm/aaaa: ")
-		# 	data_fim = input("Digite a data de fim no formato dd/mm/aaaa: ")
-		# 	qtde_participantes = input("Digite a quantidade de participantes: ")
-		# 	A().insert(nome, descricao, tipo, data_inicio, data_fim, qtde_participantes)
-		# 	print("Inserção realizada com sucesso!")
-		# def insert(self):
-		# 	nome = input("Digite o nome da atividade: ")
-		# 	descricao = input("Digite a descrição: ")
-		# 	tipo = input("Digite o tipo: 'PESQUISA' ou 'ESTAGIO: '")
-		# 	data_inicio = input("Digite a data de inicio no formato dd/mm/aaaa: ")
-		# 	data_fim = input("Digite a data de fim no formato dd/mm/aaaa: ")
-		# 	qtde_participantes = input("Digite a quantidade de participantes: ")
-		# 	A().insert(nome, descricao, tipo, data_inicio, data_fim, qtde_participantes)
-		# 	print("Inserção realizada com sucesso!")
-		# def insert(self):
-		# 	nome = input("Digite o nome da atividade: ")
-		# 	descricao = input("Digite a descrição: ")
-		# 	tipo = input("Digite o tipo: 'PESQUISA' ou 'ESTAGIO: '")
-		# 	data_inicio = input("Digite a data de inicio no formato dd/mm/aaaa: ")
-		# 	data_fim = input("Digite a data de fim no formato dd/mm/aaaa: ")
-		# 	qtde_participantes = input("Digite a quantidade de participantes: ")
-		# 	A().insert(nome, descricao, tipo, data_inicio, data_fim, qtde_participantes)
-		# 	print("Inserção realizada com sucesso!")
