@@ -24,7 +24,8 @@ INSERT INTO pais VALUES
 	('Estados Unidos', 'AMERICA DO NORTE'),
 	('Espanha', 'EUROPA'),
 	('Colômbia', 'AMERICA DO SUL'),
-	('Alemanha', 'EUROPA');
+	('Alemanha', 'EUROPA'),
+	('Brasil, AMERICA DO SUL');
 
 
 
@@ -37,7 +38,8 @@ INSERT INTO cidade (pais, estado, nome) VALUES
 	('Alemanha', 'Baviera', 'Munique'),
 	('Estados Unidos', 'Colorado', 'Denver'),
     ('Estados Unidos', 'Colorado', 'Massachusetts'),
-	('Estados Unidos', 'Washington', 'Redmond');
+	('Estados Unidos', 'Washington', 'Redmond'),
+	('Brasil', 'Sao Paulo', 'Sao Paulo');
 
 
 
