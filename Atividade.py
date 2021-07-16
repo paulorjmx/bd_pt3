@@ -62,7 +62,17 @@ class Atividade:
 		try:
 			query = "SELECT * FROM atividade WHERE nome=%s;"
 			data = (nomeAtividade, )
-			executor.fetch(query, data)
+			result = executor.fetch(query, data)
+			for record in result:
+				print()
+				print("Nome da atividade: " +record[0])
+				print("Descrição: " +record[1])
+				print("Tipo: " +record[2])
+				print("Data de início: " +record[3].strftime("%d/%m/%Y"))
+				print("Data de fim: " +record[4].strftime("%d/%m/%Y"))
+				print("Qtde. de participantes: " +str(record[5]))
+				print()
+
 		except InputError as e:
 			raise
 		except Exception as e:
@@ -72,20 +82,30 @@ class Atividade:
 		def createParameters(x): 
 			return x + " = %s"
 		executor = QueryExecutor()
-
+		result = []
 		try:
 			if (len(data) == 0):
 				query = "SELECT * FROM atividade;"
-				executor.fetch(query, data)
+				result = executor.fetch(query, data)
 			else:
 				template = "SELECT * FROM atividade WHERE {data};"
 				query = template.format(data=', '.join(map(createParameters, data.keys())))
 				data = tuple(data.values())
-				executor.fetch(query, data)
+				result = executor.fetch(query, data)
 		except InputError as e:
 			raise
 		except Exception as e:
 			raise
+		
+		for record in result:
+				print()
+				print("Nome da atividade: " +record[0])
+				print("Descrição: " +record[1])
+				print("Tipo: " +record[2])
+				print("Data de início: " +record[3].strftime("%d/%m/%Y"))
+				print("Data de fim: " +record[4].strftime("%d/%m/%Y"))
+				print("Qtde. de participantes: " +str(record[5]))
+				print()
 
 	def delete(self, nomeAtividade):
 		executor = QueryExecutor()
