@@ -30,26 +30,27 @@ class QueryExecutor:
 	def fetch(self, query, data):
 		connection = self.startConnection()
 		cursor = self.createCursor(connection)
-		result = ""
+		result = []
 		print(cursor.mogrify(query, data))
 		
 		try:
 			cursor.execute(query, data)
-			result = cursor.fetchall()
+			for res in cursor.fetchall():
+				print(res)
+
 		except Exception as e:
 			print("Erro rodando a query: '" + query + "'!")
 			print(e)
 		finally:
 			self.closeCursor(cursor)
 			self.closeConnection(connection)
-		return result
 	
 	# Usado para operações de INSERT, UPDATE ou DELETE
 	def run(self, query, data):
 		connection = self.startConnection()
 		cursor = self.createCursor(connection)
 		print(cursor.mogrify(query, data))
-		
+
 		try:
 			cursor.execute(query, data)
 			connection.commit()

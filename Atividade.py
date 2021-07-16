@@ -41,12 +41,13 @@ class Atividade:
 			raise
 
 	def update(self, nomeAtividade, data):
-		def createTemplate(x): 
+		def createParameters(x): 
 			return x + " = %s"
 		executor = QueryExecutor()
+		
 		try:
 			template = "UPDATE atividade SET {data} WHERE nome={nome}"
-			query = template.format(data=', '.join(map(createTemplate, data.keys())), nome='%s')
+			query = template.format(data=', '.join(map(createParameters, data.keys())), nome='%s')
 			data['nome'] = nomeAtividade
 			data = tuple(data.values())
 			executor.run(query, data)
@@ -54,3 +55,49 @@ class Atividade:
 			raise
 		except Exception as e:
 			raise
+
+	def searchForOne(self, nomeAtividade):
+		executor = QueryExecutor()
+
+		try:
+			query = "SELECT * FROM atividade WHERE nome=%s;"
+			data = (nomeAtividade, )
+			executor.fetch(query, data)
+		except InputError as e:
+			raise
+		except Exception as e:
+			raise
+
+	def searchForMany(self, data):
+		def createParameters(x): 
+			return x + " = %s"
+		executor = QueryExecutor()
+
+		try:
+			if (len(data) == 0):
+				query = "SELECT * FROM atividade;"
+				executor.fetch(query, data)
+			else:
+				template = "SELECT * FROM atividade WHERE {data};"
+				query = template.format(data=', '.join(map(createParameters, data.keys())))
+				data = tuple(data.values())
+				executor.fetch(query, data)
+		except InputError as e:
+			raise
+		except Exception as e:
+			raise
+
+	def delete(self, nomeAtividade):
+		executor = QueryExecutor()
+
+		try:
+			query = "DELETE FROM atividade WHERE nome=%s;"
+			data = (nomeAtividade, )
+			executor.run(query, data)
+		except InputError as e:
+			raise
+		except Exception as e:
+			raise
+
+a = Atividade()
+a.delete('aaa')

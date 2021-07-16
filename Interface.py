@@ -18,7 +18,7 @@ class Interface:
 	def insertSwitch(self):
 		operation = input("Digite o que vai inserir, opções: 'ATIVIDADE': ")
 		if operation == 'ATIVIDADE':
-			Controller().Insert().insertAtividade()
+			Controller().Atividade().insert()
 
 	def searchSwitch(self):
 		pass
