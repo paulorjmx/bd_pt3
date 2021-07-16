@@ -9,8 +9,9 @@ INSERT INTO atividade VALUES
 	('Pesquisa em armazenamento secundário na UCM.', 'Pesquisar sobre novas técnicas para armazenamento secundário.', 'PESQUISA', '21/10/2025', '01/04/2029', 1),
  	('Pesquisa em física', 'Pesquisa na área de fluídos', 'PESQUISA', '22/11/2025', '18/04/2029', 1),
  	('Pesquisa em computação', 'Pesquisa na área de algoritmos', 'PESQUISA', '22/04/2025', '18/04/2029', 1),
-	('Pesquisa em Machine Learning na Universidade Complutense de Madrid ', 'Pesquisa na área de ML', 'PESQUISA', '22/04/2020', '18/04/2025', 1);
-
+    ('Pesquisa em nanotecnologia', 'Pesquisa na área de circuitos integrados', 'PESQUISA', '04/09/2027', '10/10/2031', 1),
+    ('Pesquisa em algoritmos evolutivos', 'Pesquisa na área de algoritmos evolutivos', 'PESQUISA', '13/01/2021', '27/07/2025', 1);
+    
 
 
 
@@ -21,8 +22,8 @@ INSERT INTO pais VALUES
 	('Estados Unidos', 'AMERICA DO NORTE'),
 	('Espanha', 'EUROPA'),
 	('Colômbia', 'AMERICA DO SUL'),
-	('Alemanha', 'EUROPA'),
-	('Brasil', 'AMERICA DO SUL');
+	('Alemanha', 'EUROPA');
+
 
 
 
@@ -33,8 +34,8 @@ INSERT INTO cidade (pais, estado, nome) VALUES
 	('Colômbia', 'Bogotá', 'Bogotá'),
 	('Alemanha', 'Baviera', 'Munique'),
 	('Estados Unidos', 'Colorado', 'Denver'),
-	('Estados Unidos', 'Washington', 'Redmond'),
-	('Brasil', 'Sao Paulo', 'Sao Paulo');
+    ('Estados Unidos', 'Colorado', 'Massachusetts'),
+	('Estados Unidos', 'Washington', 'Redmond');
 
 
 
@@ -47,7 +48,7 @@ INSERT INTO universidade VALUES
     ('Universidade West Side', 'westside.academy@brown.edu', 'https://www.westside.edu/', '+1 551-753-1764', '41st Avenue. - 03312', 1),
 	('Universidade Complutense de Madrid', 'infocom@ucm.es', 'https://www.ucm.es/', '91-452-0400', 'Avda. de Séneca, 2, Ciudad Universitaria, 28040', 2),
 	('Max Planck Institute For Astrophysics', 'pr@mpa-garching.mpg.de', 'https://www.mpa-garching.mpg.de/', '089 30000-3980', 'Karl-Schwarzschild-Str. 1. Postfach 1317. D-85741', 3),
-	('Universidade Autónoma de Madrid', 'cau@uam.es', 'https://www.uam.es/uam/inicio', '+34 914 97 50 00', ' Ciudad Universitaria de Cantoblanco, 28049', 2);
+    ('MIT', 'office@mit.edu', 'https://www.mit.edu/', '617-253-1000', '77 Massachusetts Avenue', 6);
 
 
 
@@ -71,7 +72,8 @@ INSERT INTO orientador VALUES
 	('10335', 'Jacob Karl Rosenstein', 'jacobkarlr@brown.edu'),
     ('2265', 'Leroi Jansen', 'leroijansen@brown.edu'),
 	('9985', 'Tomás Caraballo', 'tomás@ucm.es'),
-	('159753', 'Hannelore Haemmerle ', 'hannelore@mpa-garching.mpg.de');
+	('159753', 'Hannelore Haemmerle ', 'hannelore@mpa-garching.mpg.de'),
+    ('1907', 'John Green', 'jgreen@mit.edu');
     
 
 
@@ -82,8 +84,10 @@ INSERT INTO pesquisa VALUES
 	('Pesquisa em armazenamento secundário na UCM.', 'Universidade Complutense de Madrid', '9985', 'Impact of SSD in DBMS'),
 	('Pesquisa em computação', 'Universidade Complutense de Madrid', '2265', 'Algorithms and Data Structures'),
 	('Pesquisa em ML na Universidade Brown', 'Universidade Brown', '10335', 'Convolutional Neural Networks'),
-	('Pesquisa em física', 'Max Planck Institute For Astrophysics', '159753', 'Fluídos');
-	('Pesquisa em Machine Learning na Universidade Complutense de Madrid ', '9985', 'Machine Learning');
+	('Pesquisa em física', 'Max Planck Institute For Astrophysics', '159753', 'Fluídos'),
+    ('Pesquisa em nanotecnologia', 'MIT', '1907', 'Nanotechnoly in integrated circuits'),
+    ('Pesquisa em algoritmos evolutivos', 'MIT', '1907', 'Robotics');
+
 
 
 
@@ -146,9 +150,7 @@ INSERT INTO moradia VALUES
 INSERT INTO programacao_intercambio (nome, intercambista, cidade, custo, data_inicio, data_fim, descricao)
 	VALUES 
     	('Estágio de verão', '773.119.540-61', 5, 2560.39, '20/11/2019', '28/11/2020', 'Experiência em desenvolvimento de sistemas Linux'),
-		('Pesquisa de Doutorado', '773.119.540-61', 1, 4500.36, '20/11/2021', '20/11/2024', 'Pesquisa de doutorado sobre Redes neurais'),
-		('Pesquisa sobre ML', '369.287.380-81', 1, 42399.61, '28/01/2021', '01/10/2024', 'Adquirir conhecimeto em redes neurais convolucionais.'),
-        ('Estágio Remunerado', '369.287.380-81', 5, 500.61, '28/01/2018', '01/10/2019', 'Estágio remunerada em empresa no exterior');
+		('Pesquisa sobre ML', '369.287.380-81', 1, 42399.61, '28/01/2021', '01/10/2024', 'Adquirir conhecimento em redes neurais convolucionais.');
             
             
             
