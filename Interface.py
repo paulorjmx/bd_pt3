@@ -94,7 +94,7 @@ class Interface:
 		input_insert = InputWidget("->")
 
 		# "Janela" na qual ira apresentar os widgets acima
-		insert_window = Window("Turismo de Intercâmbio - SEARCH", insert_widgets)
+		insert_window = Window("Turismo de Intercâmbio - INSERT", insert_widgets)
 
 		# Metodo "draw" "desenha" todos os widgets no terminal
 		insert_window.draw()
