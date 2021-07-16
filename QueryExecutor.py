@@ -41,12 +41,13 @@ class QueryExecutor:
 		connection = self.startConnection()
 		cursor = self.createCursor(connection)
 		result = []
-		print(cursor.mogrify(query, data))
+		# print(cursor.mogrify(query, data)) For debug reasons
 		
 		try:
 			cursor.execute(query, data)
-			for res in cursor.fetchall():
-				print(res)
+			result = cursor.fetchall()
+			# for res in cursor.fetchall():
+			# 	print(res)
 
 		except Exception as e:
 			print("Erro rodando a query: '" + query + "'!")
@@ -54,12 +55,13 @@ class QueryExecutor:
 		finally:
 			self.closeCursor(cursor)
 			self.closeConnection(connection)
+		return result
 	
 	# Usado para operações de INSERT, UPDATE ou DELETE
 	def run(self, query, data):
 		connection = self.startConnection()
 		cursor = self.createCursor(connection)
-		print(cursor.mogrify(query, data))
+		# print(cursor.mogrify(query, data)) For debug reasons
 
 		try:
 			cursor.execute(query, data)
