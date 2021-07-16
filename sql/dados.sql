@@ -199,5 +199,5 @@ INSERT INTO moradia_programa VALUES
 INSERT INTO comentarios VALUES
 	('123.456.789-70', '14:30', '11/05/2017', 'Cidade boa', 4, NULL, NULL),
 	('123.456.789-70', '20:00', '20/01/2020', 'Cidade ruim', 6, NULL, NULL),
-	('773.119.540-61', '14:30', '11/05/2017', 'Ótima cidase', 2, NULL, NULL),
+	('773.119.540-61', '14:30', '11/05/2017', 'Ótima cidade', 2, NULL, NULL),
 	('773.119.540-61', '19:10', '11/04/2014', 'Ainda não visitei', 7, NULL, NULL);

@@ -38,7 +38,7 @@ GROUP BY INTER
 HAVING COUNT(*) > 1;
 
 --  Consultar quais intercambistas, que realizou ao menos um comentário, um Supervisor já supervisionou
-SELECT I.cpf as ESTAGIARIO, S.cod_ident as SUPERVISOR, E.atividade as ESTAGIO
+SELECT S.cod_ident as SUPERVISOR, I.cpf as ESTAGIARIO, E.atividade as ESTAGIO
 FROM Estagio E
     JOIN Supervisor S ON E.supervisor = S.cod_ident
     JOIN Atividade A ON E.atividade = A.nome
@@ -47,7 +47,9 @@ FROM Estagio E
     JOIN Cidade C ON PI.cidade = C.id_cidade
     Join Intercambista I ON PI.intercambista = I.cpf AND
     EXISTS( SELECT COM.intercambista FROM Comentarios COM
-            WHERE Com.intercambista = I.cpf);
+            WHERE Com.intercambista = I.cpf)
+GROUP BY S.cod_ident, E.atividade, I.cpf
+ORDER BY S.cod_ident;
 
 -- Contar intercambistas em programas de tipo pesquisa em cada continente
 SELECT continente, COUNT(*) FROM intercambista I
@@ -58,7 +60,6 @@ SELECT continente, COUNT(*) FROM intercambista I
     JOIN atividade A ON A.nome = P_A.atividade
     WHERE A.tipo='PESQUISA'
     GROUP BY P.continente;
-
 
 -- Selecionar os Intercambistas que são os únicos a realizar um programa de intercâmbio numa determinada cidade.    
 SELECT I.cpf FROM Intercambista I
