@@ -163,14 +163,14 @@ INSERT INTO moradia VALUES
 -- Insercao de dados: PROGRAMACAO INTERCAMBIO
 INSERT INTO programacao_intercambio (nome, intercambista, cidade, custo, data_inicio, data_fim, descricao)
 	VALUES 
-    	('Estágio de verão', '773.119.540-61', 5, 2560.39, '20/11/2019', '28/11/2020', 'Experiência em desenvolvimento de sistemas Linux'),
-		('Pesquisa sobre ML', '369.287.380-81', 1, 42399.61, '28/01/2021', '01/10/2024', 'Adquirir conhecimento em redes neurais convolucionais.'),
+    	('Estágio de verão', '773.119.540-61', 1, 2560.39, '20/11/2019', '28/11/2020', 'Experiência em redes neurais aplicadas a saude'),
+		('Pesquisa sobre ML na Brown', '369.287.380-81', 1, 42399.61, '28/01/2021', '01/10/2024', 'Adquirir conhecimento em redes neurais convolucionais.'),
+		('Pesquisa sobre Fluidos', '369.287.380-81', 4, 42399.61, '28/01/2021', '01/10/2024', 'Adquirir conhecimeto em mecanica dos fluidos.'),
     	('Estágio de inverno', '773.119.540-61', 1, 3160.99, '24/06/2019', '28/11/2022', 'Experiência em desenvolvimento com node.js'),
 		('Pesquisa de Doutorado', '773.119.540-61', 1, 4500.36, '20/11/2021', '20/11/2024', 'Pesquisa de doutorado sobre Redes neurais'),
-		('Pesquisa sobre Fluidos', '369.287.380-81', 5, 42399.61, '28/01/2021', '01/10/2024', 'Adquirir conhecimeto em mecanica dos fluidos.'),
         ('Estágio Remunerado', '369.287.380-81', 5, 500.61, '28/01/2018', '01/10/2019', 'Estágio remunerada em empresa no exterior'),
 		('Estágio de Verão - Guilherme', '123.456.789-70', 4, 2600.65, '10/05/2017', '05/07/2018', 'Estagio remunerado'),
-		('Pesquisa em Computacao', '147.458.174-70', 4, 1254.50, '20/11/2020', '20/1/2025', 'Pesquisa em computacao'),
+		('Pesquisa em Computacao', '147.458.174-70', 2, 1254.50, '20/11/2020', '20/1/2025', 'Pesquisa em computacao'),
         ('Pos grad design', '123.456.789-70', 6, 5000.00, '07/05/2019', '05/10/2023', 'Pesquisa em Design ...'),
 		('Pesquisa de Mestrado', '773.119.540-61', 2, 2550.36, '21/10/2025', '01/04/2029', 'Projeto de Mestrado');
             
@@ -185,7 +185,7 @@ INSERT INTO programacao_atividade VALUES
 	(4, 'Estagio professor de Fisica'),
 	(6, 'Pesquisa em computação'),
 	(5, 'Estagio de verão em quimica'),
-	(7, 'Pesquisa em armazenamento secundário na UCM.');
+	(8, 'Pesquisa em armazenamento secundário na UCM.');
             
             
             
