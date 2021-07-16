@@ -32,6 +32,14 @@ class Controller:
 				print("Update realizado com sucesso!")
 			else:
 				print("Erro! Você precisa de pelo menos um campo a ser alterado!")
+
+	class Search:
+		def atividade(self):
+			nome = input('Digite o nome da atividade que deseja buscar: ')
+			if nome == '':
+				A().searchForMany()
+			else:
+				A().searchForOne(nome)
 		
 		# def insert(self):
 		# 	nome = input("Digite o nome da atividade: ")
