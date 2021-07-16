@@ -6,7 +6,7 @@ INSERT INTO atividade VALUES
  	('Estagio em Engenharia de Software', 'Gerenciar uma equipe de desenvolvimento', 'ESTAGIO', '15/07/2020', '10/07/2021', 1),
  	('Estagio em desenvolvimento de sistemas', 'Apoiar o desenvolvimento dos sistemas', 'ESTAGIO', '23/11/2019', '23/11/2020', 1),
 	('Estagio em redes neurais para saude', 'Redes neurais em saúde', 'ESTAGIO', '25/11/2020', '28/11/2021', 1),
-	('Estagio professor de Fisica', 'Lecionar aulas de física', 'ESTAGIO', '07/05/2020', '01/05/2021', 1),
+	('Estagio desenvolvimento web', 'Desenvolver e realizar manutenções em sistemas web', 'ESTAGIO', '07/05/2020', '01/05/2021', 1),
 	('Estagio de verão em quimica', 'Lecionar aulas de quimica', 'ESTAGIO', '27/10/2005', '05/12/2006', 1),
 	('Pesquisa em ML na Universidade Brown', 'Pesquisar sobre novas técnicas em aprendizado profundo (Depp Learning).', 'PESQUISA', '02/02/2021', '17/09/2024', 1),
 	('Pesquisa em armazenamento secundário na UCM.', 'Pesquisar sobre novas técnicas para armazenamento secundário.', 'PESQUISA', '21/10/2025', '01/04/2029', 1),
@@ -182,7 +182,7 @@ INSERT INTO programacao_atividade VALUES
 	(1, 'Estagio em redes neurais para saude'),
 	(2, 'Pesquisa em ML na Universidade Brown'),
 	(3, 'Pesquisa em física'),
-	(4, 'Estagio professor de Fisica'),
+	(4, 'Estagio desenvolvimento web'),
 	(6, 'Pesquisa em computação'),
 	(5, 'Estagio de verão em quimica'),
 	(8, 'Pesquisa em armazenamento secundário na UCM.');
