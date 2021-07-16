@@ -96,6 +96,9 @@ INSERT INTO pesquisa VALUES
     ('Pesquisa em algoritmos evolutivos', 'MIT', '1907', 'Robotics'),
 	('Pesquisa em Machine Learning em Madrid', 'Universidade Complutense de Madrid', '9985', 'Machine Learning'),
 	('Pesquisa sobre design em Redmond', 'Instituto de Tecnologia DigiPen', '');
+	('Pesquisa em física', 'Max Planck Institute For Astrophysics', '159753', 'Fluídos');
+	('Pesquisa em Machine Learning em Madrid', 'Universidade Complutense de Madrid', '9985', 'Machine Learning'),
+	('Pesquisa sobre design em Redmond', 'Instituto de Tecnologia DigiPen', '')
 
 
 
@@ -200,3 +203,5 @@ INSERT INTO comentarios VALUES
 	('123.456.789-70', '20:00', '20/01/2020', 'Cidade ruim', 6, NULL, NULL),
 	('773.119.540-61', '14:30', '11/05/2017', 'Ótima cidae', 2, NULL, NULL),
 	('773.119.540-61', '19:10', '11/04/2014', 'Ainda não visitei', 7, NULL, NULL);
+	('773.119.540-61', '19:10', '11/04/2014', 'Ainda não visitei', 7, NULL, NULL);
+>>>>>>> consultas_sql:dados.sql
