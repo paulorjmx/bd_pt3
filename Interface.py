@@ -94,7 +94,7 @@ class Interface:
 		input_insert = InputWidget("->")
 
 		# "Janela" na qual ira apresentar os widgets acima
-		insert_window = Window("Turismo de Intercâmbio - Insert", insert_widgets)
+		insert_window = Window("Turismo de Intercâmbio - SEARCH", insert_widgets)
 
 		# Metodo "draw" "desenha" todos os widgets no terminal
 		insert_window.draw()
@@ -108,6 +108,30 @@ class Interface:
 			pass
 
 	def searchSwitch(self):
+		list_operation = ListWidget(["Atividade", "Universidade", "Empresa", "Sair"])
+
+		text_explain = TextWidget("Digite a opção que deseja buscar:")
+
+		# Lista de widgets para aparecer na tela
+		insert_widgets = [text_explain, list_operation]
+
+		# Widget para manipular a entrada do usuario
+		input_insert = InputWidget("->")
+
+		# "Janela" na qual ira apresentar os widgets acima
+		insert_window = Window("Turismo de Intercâmbio - SEARCH", insert_widgets)
+
+		# Metodo "draw" "desenha" todos os widgets no terminal
+		insert_window.draw()
+
+		# Armazena a escolha do usuario
+		operation = input_insert.show(list_operation)
+
+		if operation == 1:
+			Controller().Search().atividade()
+		elif operation == 4:
+			pass
+
 		pass
 	def updateSwitch(self):
 		pass
