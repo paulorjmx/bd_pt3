@@ -29,18 +29,36 @@ WHERE E.remuneracao > 0
 GROUP BY EXTRACT(YEAR FROM A.data_inicio), E.remuneracao, A.nome
 ORDER BY ano;
 
--- Consultar quais intercambistas fizeram comentários sobre pelo menos duas cidades que visitou
-Select I.cpf AS INTERCAMBISTA as CIDADE FROM Comentarios COM
-    JOIN Intercambista I ON COM.intercambista = I.cpf
-    JOIN Cidade CID ON Com.cidade = CID.id_cidade;
-
 -- Consultar quais intercambistas fizeram comentários sobre mais de uma cidade que visitou.
 SELECT I.cpf AS INTER, Count(Com.cidade) N_CID from Comentarios COM
-    join Intercambista I ON COM.intercambista = I.cpf
-    join programacao_intercambio PI ON I.cpf = PI.intercambista
-    join Cidade CID ON PI.cidade = Cid.id_cidade AND COM.cidade = CID.id_cidade
+    JOIN Intercambista I ON COM.intercambista = I.cpf
+    JOIN programacao_intercambio PI ON I.cpf = PI.intercambista
+    JOIN Cidade CID ON PI.cidade = Cid.id_cidade AND COM.cidade = CID.id_cidade
 GROUP BY INTER
 HAVING COUNT(*) > 1;
+
+--  Consultar quais intercambistas, que realizou ao menos um comentário, um Supervisor já supervisionou
+SELECT I.cpf as ESTAGIARIO, S.cod_ident as SUPERVISOR, E.atividade as ESTAGIO
+FROM Estagio E
+    JOIN Supervisor S ON E.supervisor = S.cod_ident
+    JOIN Atividade A ON E.atividade = A.nome
+    JOIN programacao_atividade PA ON A.nome = PA.atividade
+    JOIN programacao_intercambio PI ON PA.programacao = PI.id_programacao
+    JOIN Cidade C ON PI.cidade = C.id_cidade
+    Join Intercambista I ON PI.intercambista = I.cpf AND
+    EXISTS( SELECT COM.intercambista FROM Comentarios COM
+            WHERE Com.intercambista = I.cpf);
+
+-- Contar intercambistas em programas de tipo pesquisa em cada continente
+SELECT continente, COUNT(*) FROM intercambista I
+    JOIN programacao_intercambio P_I ON I.cpf = P_I.intercambista
+    JOIN cidade C ON P_I.cidade = C.id_cidade
+    JOIN pais P ON C.pais = P.nome
+    JOIN programacao_atividade P_A ON P_A.programacao = P_I.id_programacao
+    JOIN atividade A ON A.nome = P_A.atividade
+    WHERE A.tipo='PESQUISA'
+    GROUP BY P.continente;
+
 
 -- Selecionar os Intercambistas que são os únicos a realizar um programa de intercâmbio numa determinada cidade.    
 SELECT I.cpf FROM Intercambista I
@@ -53,12 +71,3 @@ HAVING COUNT(*) = (SELECT COUNT(*) FROM programacao_intercambio PI
                                     JOIN Cidade C ON PI.cidade = C.id_cidade
                                     WHERE C.id_cidade = 1);
 
--- Contar intercambistas em programas de tipo pesquisa em cada continente
-SELECT continente, COUNT(*) FROM intercambista I
-    JOIN programacao_intercambio P_I ON I.cpf = P_I.intercambista
-    JOIN cidade C ON P_I.cidade = C.id_cidade
-    JOIN pais P ON C.pais = P.nome
-    JOIN programacao_atividade P_A ON P_A.programacao = P_I.id_programacao
-    JOIN atividade A ON A.nome = P_A.atividade
-    WHERE A.tipo='PESQUISA'
-    GROUP BY P.continente;
