@@ -2,8 +2,8 @@ from Atividade import Atividade as A
 
 # Controlador principal, recebe os inputs necessários para realizar operações.
 class Controller:
-	class Atividade:
-		def insert(self):
+	class Insert:
+		def atividade(self):
 			nome = input("Digite o nome da atividade: ")
 			descricao = input("Digite a descrição: ")
 			tipo = input("Digite o tipo: 'PESQUISA' ou 'ESTAGIO: '")
@@ -12,8 +12,9 @@ class Controller:
 			qtde_participantes = input("Digite a quantidade de participantes: ")
 			A().insert(nome, descricao, tipo, data_inicio, data_fim, qtde_participantes)
 			print("Inserção realizada com sucesso!")
-		
-		def update(self):
+	
+	class Update:
+		def atividade(self):
 			nome = input("Digite o nome da atividade: ")
 			print("Caso não queira alterar algum campo, aperte enter")
 			
@@ -59,5 +60,3 @@ class Controller:
 		# 	qtde_participantes = input("Digite a quantidade de participantes: ")
 		# 	A().insert(nome, descricao, tipo, data_inicio, data_fim, qtde_participantes)
 		# 	print("Inserção realizada com sucesso!")
-	
-Controller().Atividade().update()
