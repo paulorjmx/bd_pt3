@@ -35,9 +35,9 @@ class Controller:
 
 	class Search:
 		def atividade(self):
-			nome = input('Digite o nome da atividade que deseja buscar: ')
+			nome = input('Digite o nome da atividade que deseja buscar (aperte ENTER para buscar tudo): ')
 			if nome == '':
-				A().searchForMany()
+				A().searchForMany('')
 			else:
 				A().searchForOne(nome)
 		
