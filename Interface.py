@@ -104,7 +104,11 @@ class Interface:
 
 		if operation == 1:
 			Controller().Insert().atividade()
-		elif operation == 4:
+		elif operation == 2:
+			print("Operação não implementada")
+		elif operation == 3:
+			print("Operação não implementada")
+		else:
 			pass
 
 	def searchSwitch(self):
@@ -129,7 +133,11 @@ class Interface:
 
 		if operation == 1:
 			Controller().Search().atividade()
-		elif operation == 4:
+		elif operation == 2:
+			print("Operação não implementada")
+		elif operation == 3:
+			print("Operação não implementada")
+		else:
 			pass
 
 		pass
