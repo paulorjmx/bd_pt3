@@ -3,10 +3,20 @@ import psycopg2
 class QueryExecutor:
 	def __init__(self):
 		#	Sempre arrumar para a sua instância do DB
-		self.DB_NAME = "postgres"
-		self.DB_USER = "postgres"
+		
+		# Nome da base de dados
+		self.DB_NAME = "turismo_intercambio"
+		
+		# Usuario utilizado para a conexao com o banco de dados
+		self.DB_USER = "paulo"
+		
+		# Senha utilizada para a conexao com o banco de dados
 		self.DB_PASSWORD = "gruposete"
+		
+		# Host onde se estebelecera a conexao com o banco de dados
 		self.HOST = "localhost"
+		
+		# Porta utilizada para a conexao
 		self.PORT = "5432"
 	
 	# Abre uma conexão com o banco.
