@@ -25,7 +25,7 @@ INSERT INTO pais VALUES
 	('Espanha', 'EUROPA'),
 	('Colômbia', 'AMERICA DO SUL'),
 	('Alemanha', 'EUROPA'),
-	('Brasil, AMERICA DO SUL');
+	('Brasil', 'AMERICA DO SUL');
 
 
 
